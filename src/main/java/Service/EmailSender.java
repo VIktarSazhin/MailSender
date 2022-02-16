@@ -1,3 +1,4 @@
+package Service;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
@@ -9,11 +10,8 @@ import java.util.Properties;
 
 
 public class EmailSender {
-    public static void main(String[] args) {
 
-        JSConverter.parse();
-        Test.convertToPdf();
-
+    public static void emailSender() {
 
         final String fromEmail = "redteam.intensive@gmail.com";
         final String toEmail = "zankohannaandreevna@gmail.com"; // нужно будет указать email Юры
@@ -53,7 +51,8 @@ public class EmailSender {
 
             msg.setContent(email);
             Transport.send(msg);
-            System.out.println("Sent message");
+            System.out.println("send");
+
         } catch (MessagingException | IOException e) {
             e.printStackTrace();
         }
