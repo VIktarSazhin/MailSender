@@ -11,6 +11,9 @@ import java.util.Properties;
 public class EmailSender {
     public static void main(String[] args) {
 
+        JSConverter.parse();
+        Test.convertToPdf();
+
 
         final String fromEmail = "redteam.intensive@gmail.com";
         final String toEmail = "zankohannaandreevna@gmail.com"; // нужно будет указать email Юры
@@ -41,7 +44,7 @@ public class EmailSender {
             msg.setSubject("Team RED report");
 
             Multipart email = new MimeMultipart();
-            String filename = "C:\\Users\\ANYA\\IdeaProjects\\my_project-master\\MailSender\\test.pdf"; // адрес к файлу
+            String filename = "newPDF.pdf";
             MimeBodyPart pdfFile = new MimeBodyPart();
 
             pdfFile.attachFile(filename);
